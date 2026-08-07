@@ -2,6 +2,16 @@
   command = "npm run build"
   publish = "out"
 
+[build.environment]
+  # This is a pure static export (output: "export") with no SSR/ISR/API
+  # routes, so it doesn't need Netlify's Next.js Runtime plugin. That
+  # plugin builds serverless functions and can change how the site is
+  # served in a way that interferes with Netlify Forms' static HTML scan.
+  # If a "Next.js Runtime" plugin is still listed under Site configuration
+  # > Build & deploy > Plugins after this, remove it there too — on
+  # Runtime v5 this env var alone is not always enough.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
 [[redirects]]
   from = "/category/uncategorized/*"
   to = "/blog/"

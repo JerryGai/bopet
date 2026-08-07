@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Form detection</title>
+</head>
+
+<body>
+  <!--
+      This page is never linked to or shown to visitors. It exists only so
+      Netlify's build-time HTML scanner has a plain static copy of every
+      form (with every field) to register, since Next.js's own rendered
+      pages don't reliably get picked up by that scanner. The real forms
+      that users fill out live in the React components (see
+      src/components/ContactForm.tsx) and submit via fetch() to these same
+      form names.
+    -->
+  <form name="contact" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" />
+  </form>
+
+  <form name="pricing-inquiry" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" />
+  </form>
+</body>
+
+</html>
