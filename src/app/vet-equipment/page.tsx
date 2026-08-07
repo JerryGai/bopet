@@ -13,30 +13,45 @@ export const metadata: Metadata = {
   title: "VET Equipment",
   description:
     "Veterinary cage equipment supply and sales from Bo's Pet Services — stainless steel construction, product specs, and facility photos.",
+  alternates: {
+    canonical: "/vet-equipment/",
+  },
 };
 
 export default function VetEquipmentPage() {
   return (
     <>
-      <PageHero eyebrow="What else do we have?" title="VET Equipments" />
+      <PageHero
+        eyebrow="What else do we have?"
+        title="VET Equipments"
+        image="/images/gallery-boarding-area-2-hero.jpg"
+        imageAlt="Stainless steel VET equipment cages installed in our facility"
+        imagePosition="center 20%"
+        dividerTo="#ffffff"
+      />
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid md:grid-cols-2 gap-10 mb-16">
           <div className="grid grid-cols-3 gap-3">
-            {vetEquipmentImages.map((src) => (
+            {vetEquipmentImages.map((src, i) => (
               <div
                 key={src}
                 className="relative aspect-square rounded-lg overflow-hidden border border-stone-200"
               >
-                <Image src={src} alt="VET equipment cage" fill className="object-contain" />
+                <Image
+                  src={src}
+                  alt={`VET equipment cage, view ${i + 1} of ${vetEquipmentImages.length}`}
+                  fill
+                  className="object-contain"
+                />
               </div>
             ))}
           </div>
           <div>
-            <h2 className="text-xl font-bold text-stone-800 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4">
               Product Parameters (units are mm)
             </h2>
-            <ul className="space-y-2 text-stone-600">
+            <ul className="space-y-2 text-lg text-stone-600">
               {productDimensions.map((d) => (
                 <li key={d}>{d}</li>
               ))}
@@ -45,13 +60,13 @@ export default function VetEquipmentPage() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-xl font-bold text-stone-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4">
             Product Description
           </h2>
-          <h3 className="text-lg font-semibold text-stone-700 mb-3">
+          <h3 className="text-xl font-semibold text-stone-700 mb-3">
             Material Description
           </h3>
-          <ul className="space-y-2 text-stone-600 list-disc pl-5">
+          <ul className="space-y-2 text-lg text-stone-600 list-disc pl-5">
             {materialDescription.map((d) => (
               <li key={d}>{d}</li>
             ))}
@@ -59,7 +74,7 @@ export default function VetEquipmentPage() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-xl font-bold text-stone-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-stone-800 mb-4">
             In Our Facility
           </h2>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -75,7 +90,7 @@ export default function VetEquipmentPage() {
         </div>
       </section>
 
-      <section className="bg-stone-50 py-16">
+      <section className="bg-mist py-16">
         <div className="mx-auto max-w-xl px-4">
           <ContactForm formName="contact" title="Contact US" />
         </div>

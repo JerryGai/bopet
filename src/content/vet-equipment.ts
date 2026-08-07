@@ -6,8 +6,8 @@ export const vetEquipmentImages = [
 
 export const facilityImages = [
   { src: "/images/gallery-grooming-area.jpg", alt: "Grooming area at Bo's Pet Services" },
-  { src: "/images/gallery-boarding-area-2.jpg", alt: "Boarding area at Bo's Pet Services" },
-  { src: "/images/gallery-boarding-area-1.jpg", alt: "Boarding area at Bo's Pet Services" },
+  { src: "/images/gallery-boarding-area-2.jpg", alt: "Boarding area with VET equipment cages, view 1" },
+  { src: "/images/gallery-boarding-area-1.jpg", alt: "Boarding area with VET equipment cages, view 2" },
 ];
 
 export const productDimensions = [

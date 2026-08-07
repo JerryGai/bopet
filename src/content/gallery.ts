@@ -3,6 +3,13 @@ export interface GalleryImage {
   alt: string;
 }
 
+/** Maps a gallery thumbnail path to its original full-resolution version. */
+export function getFullImage(src: string): string {
+  return src
+    .replace("/images/", "/images/full/")
+    .replace(/-400x(284|516)(\.\w+)$/, "-full$2");
+}
+
 export const galleryImages: GalleryImage[] = [
   { src: "/images/jp-valery-1272795-unsplash-400x516.jpg", alt: "Happy dog at Bo's Pet Services" },
   { src: "/images/helena-lopes-1329839-unsplash-400x516.jpg", alt: "Cat resting comfortably" },

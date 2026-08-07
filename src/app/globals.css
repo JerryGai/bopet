@@ -8,11 +8,79 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), Georgia, "Times New Roman", serif;
+
+  /* Brand palette, lifted from the original site's Divi theme settings */
+  --color-gold: #edb059;
+  --color-gold-dark: #d99a3e;
+  --color-tan: #d29f68;
+  --color-tan-dark: #cc8d66;
+  --color-charcoal: #232220;
+  --color-ink: #191919;
+  --color-mist: #f6ecdd;
+
+  /*
+   * gold/gold-dark/tan/tan-dark all fall well under WCAG AA's 4.5:1 text
+   * contrast minimum against white (1.9-2.8:1 measured). Use `clay` instead
+   * for any text, icon, or focus-ring color that sits on a light background;
+   * it's the same warm hue family, darkened to ~5.4:1 against white.
+   */
+  --color-clay: #9a5b1f;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  background: var(--color-ink);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 0.7s ease-out 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay {
+    animation: none;
+  }
 }

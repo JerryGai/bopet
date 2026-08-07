@@ -9,6 +9,13 @@ export const siteConfig = {
   email: "bopetservice@gmail.com",
   emailHref: "mailto:bopetservice@gmail.com",
   address: "1211 Boucher Ave #2, Warman, SK",
+  addressParts: {
+    streetAddress: "1211 Boucher Ave #2",
+    addressLocality: "Warman",
+    addressRegion: "SK",
+    addressCountry: "CA",
+  },
+  geo: { latitude: 52.301602260143504, longitude: -106.58797268398507 },
   hours: [
     { label: "Monday – Friday", value: "9am – 5pm" },
     { label: "Weekends / Holidays", value: "By appointment" },
