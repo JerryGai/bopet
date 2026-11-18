@@ -21,7 +21,7 @@ export const boardingInfo = {
   rows: [
     { label: "1 dog", price: "$40/day plus TAX" },
     { label: "2 dogs", price: "$60/day plus TAX" },
-    { label: "3 dogs", price: "$75/day plus TAX" },
+    { label: "3 dogs", price: "$95/day plus TAX" },
     { label: "1 cat", price: "$20/day plus TAX" },
   ],
   notes: [
@@ -33,7 +33,8 @@ export const boardingInfo = {
     { range: "20 to 29 days", discount: "15% discount" },
     { range: "30+ days", discount: "20% discount" },
   ],
-  discountNote: "This discount applies to dogs only. It does not apply to cats.",
+  discountNote:
+    "This discount applies to dogs only. It does not apply to cats.",
 };
 
 interface GroomingSection {
@@ -79,7 +80,9 @@ export const bathSection = {
   description:
     "Service includes: the bath, blow dry, brush out, trimming (face, bum, paws etc.), nail clipping, and ear cleaning.",
   headers: ["Dog Size", "Small", "Medium", "Large", "X-Large"],
-  rows: [{ label: "Small", values: ["$55~75+", "$65~75+", "$85~95+", "$120~150+"] }],
+  rows: [
+    { label: "Small", values: ["$55~75+", "$65~75+", "$85~95+", "$120~150+"] },
+  ],
   notes: [
     "Additional costs may be incurred depending on the condition of the difficulty of dog.",
     "Service includes: the bath, blow dry, brush out.",
